@@ -84,9 +84,10 @@ ul li a {
     display: flex;
     flex-grow: 1;
     width: auto;
-    height: 296px;
+    max-height: 296px;
     border: none;
     justify-content: flex-start;
+    align-items: flex-end;
     flex-direction: column;
 
     padding: 20px;
@@ -211,7 +212,7 @@ ul li a {
     letter-spacing: -0.26px;
     text-align: center;
 
-    margin: 25px;
+    margin: 20px;
     line-height: 0;
   }
 
@@ -274,6 +275,28 @@ ul li a {
     white-space: normal; /* Ensures text wraps */
 }
 
+.section-header.sub4{
+    margin-top: 40px;
+    font-size: 16px;
+
+    color: gray;
+
+    width: 200px;
+
+    text-align: right;
+    line-height: 1.2;
+
+    white-space: normal;
+
+    align-self: right;
+}
+
+.icon {
+    margin: 20px;
+    width: 24px;
+    filter: brightness(0) saturate(100%) invert(99%) sepia(0%) saturate(1%) hue-rotate(319deg) brightness(107%) contrast(100%);
+}
+
 @media (max-width: 1450px) {
   .flex {
     flex-direction: column;
@@ -324,6 +347,31 @@ ul li a {
     width: 90%; 
   }
 
+}
+
+.x-button {
+    background-color: transparent;
+    border: 1px solid black;
+    color: black;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 50px;
+}
+
+.x-button.ungrowable {
+
+    max-height: 50px;
+    max-width: 150px;
+}
+
+.button-container {
+    display: flex;
+    flex-grow: 1;
+    align-items: flex-end;
 }
 
 @font-face {
