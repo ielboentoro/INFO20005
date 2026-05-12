@@ -374,6 +374,33 @@ ul li a {
     align-items: flex-end;
 }
 
+.store-container{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 1280px;
+}
+
+.store-filter-container{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 264px;
+}
+
+.store-products-container{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 844px;
+}
+
+.filter-desktop{
+    display: block;
+    color: white;
+    
+}
+
 @font-face {
     font-family: "Source Serif Pro:Regular";
     font-style: normal;
