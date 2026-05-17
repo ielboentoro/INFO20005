@@ -6,8 +6,9 @@
     <title>Site Title</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <script src=script.js></script>
+    <script src=scripts/scripts.js></script>
 
     <div class="header-container">
         <div class="desktop-subheader left">
@@ -29,7 +30,7 @@
 
         <div class="desktop-subheader right">
             <img src="images/svg/account.svg" alt="account" class="icon">
-            <img src="images/svg/cart.svg" alt="cart" class="icon">
+            <a href="cart.html"><image src="images/svg/cart.svg" alt="cart" class="icon"></image></a>
             <img src="images/svg/burger.svg" alt="burger" class="icon">
         </div>
 
@@ -48,9 +49,30 @@
         <div class="subsite-header-spacer"></div>
     </div>
 
-    <div class="page-content">
+    <section class="page-content">
+        <section class="product-content">
+            <div class="content">
+                <image class="product-image" alt="product-image" width="100%" id="prodImage" src=""></image>
+            </div>
 
-    </div>
+            <div class="menu">
+                <button onclick="addToCart(productData)">Add to Cart</button>
+                <br>
+                <a href="#">Link 2</a>
+                <br>
+                <a href="#">Link 3</a>
+            </div>
+
+            <div class="description">
+                <a class="section-header product-description">
+                    Description
+                </a>
+                <br>
+                <br>
+                <a class="product-description">The sakura blend is an exclusive seasonal blend inspired by the cherry blossoms of Japan. It’s versatile, and suitable for both espresso and filter. However, we prefer it brewed with an espresso machine.</a>
+            </div>
+        </section>
+    </section>
 
     <div class="footer">
         <p class="section-header sub2">Our Socials</p>
