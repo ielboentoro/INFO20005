@@ -170,4 +170,8 @@ function updateMiniCartHTML(product){
     </div>`
 }
 
+function resetCart(){
+    localStorage.clear();
+}
+
  
