@@ -104,6 +104,12 @@ function initCart(cart){
     }
 }
 
+function initMiniCart(){
+    for(i = 0; i < cart.length; i++){
+        updateMiniCartHTML(cart[i]);
+    }
+}
+
 function clearCartVis(){
     const elem = document.getElementById("cartContent");
 
@@ -138,6 +144,28 @@ function updateCartHTML(product){
             <button onclick="deleteFromCart('${product.title}')">Delete</button>
             <button onclick="addToCart('${product.title}')">Add Quantity</button>
             <button onclick="deleteQtyCart('${product.title}')">Reduce Quantity</button>
+        </div>
+    </div>`
+}
+
+function updateMiniCartHTML(product){
+    const elem = document.getElementById("cartContent");
+
+    elem.innerHTML += 
+    `<div class="cartBox" id="${product.title}">
+        <div class="preview">
+            <image class="small-img" src="${product.img_src1}" width="auto"></image>
+        </div>
+
+        <div class="title">
+            <a class="section-header product-description">${product.title}</a>
+        </div>
+
+        <div class="aux">
+            <br>
+            <a class="product-description" id="${product.title}totalPrice">Total Price: ${product.price * product.quantity}</a>
+            <br>
+            <a>Quantity: ${product.quantity}</a>
         </div>
     </div>`
 }

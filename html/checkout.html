@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Checkout</title>
+    <link rel="stylesheet" href="css/checkout.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src=scripts/scripts.js></script>
+</head>
+
+<body onload="initMiniCart()">
+    <div class="header-container">
+        <div class="desktop-subheader left">
+            <img src="images/brand-mini.png" alt="Disciple Coffee" height="53px" href="home.html">
+        </div>
+        
+        <div class="desktop-subheader spacerL"></div>
+
+        <div class="floating-header">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="store.html">Store</a></li>
+                <li><a href="locations.html">Locations</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+
+        <div class="desktop-subheader spacerR"></div>
+
+        <div class="desktop-subheader right">
+            <img src="images/svg/account.svg" alt="account" class="icon">
+            <a href="cart.html?name=Cart"><image src="images/svg/cart.svg" alt="cart" class="icon"></image></a>
+            <img src="images/svg/burger.svg" alt="burger" class="icon">
+        </div>
+
+        <div class="floating-header mobile">
+            <img class="header-img" src="images/brand-mini.png" alt="Disciple Coffee" height="53px" href="home.html">
+        </div>
+    </div>
+    
+    <div class="page-top">
+        <div class="subsite-header-spacer"></div>
+
+        <div class="subsite-header-container">
+            <p class="subsite-header">Checkout</p>
+        </div>
+
+        <div class="subsite-header-spacer"></div>
+    </div>
+
+    <section class="page-content">
+        <section class="product-content">
+            <div class="content">
+                <div class="row">
+                    <div class="col-75">
+                        <div class="container">
+                            <form action="/action_page.php">
+                                <div class="row">
+                                    <div class="col-50">
+                                        <h3>Shipping Address</h3>
+                                        <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+                                        <input type="text" id="fname" name="firstname" placeholder="Name">
+                                        <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                                        <input type="text" id="email" name="email" placeholder="stop1@unimelb.edu.au">
+                                        <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+                                        <input type="text" id="adr" name="address" placeholder="Street">
+                                        <label for="city"><i class="fa fa-institution"></i> City</label>
+                                        <input type="text" id="city" name="city" placeholder="City">
+
+                                        <div class="row">
+                                        <div class="col-50">
+                                            <label for="state">State</label>
+                                            <input type="text" id="state" name="state" placeholder="XX">
+                                        </div>
+                                        <div class="col-50">
+                                            <label for="zip">Zip</label>
+                                            <input type="text" id="zip" name="zip" placeholder="XXXX">
+                                        </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-50">
+                                        <h3>Payment</h3>
+                                        <label for="cname">Cardholder Name</label>
+                                        <input type="text" id="cname" name="cardname" placeholder="Name">
+                                        <label for="ccnum">Card Number</label>
+                                        <input type="text" id="ccnum" name="cardnumber" placeholder="XXXX XXXX XXXX XXXX">
+                                        <label for="expmonth">Expiry (MM)</label>
+                                        <input type="text" id="expmonth" name="expmonth" placeholder="Month">
+                                        <div class="row">
+                                            <div class="col-50">
+                                                <label for="expyear">Expiry (YY)</label>
+                                                <input type="text" id="expyear" name="expyear" placeholder="20XX">
+                                            </div>
+                                            <div class="col-50">
+                                                <label for="cvv">Security</label>
+                                                <input type="text" id="cvv" name="cvv" placeholder="XXX">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <br>
+                                            <label class="inForm-check">
+                                                <input type="checkbox" checked="checked" name="sameadr"> I agree to the terms and conditions.
+                                            </label>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <input type="submit" value="Checkout" class="btn">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu" id="cartContent">
+                <br>
+                <br>
+                <a class="section-header product-description">Your Items</a>
+                <br>
+                <br>
+
+            </div>
+        </section>
+    </section>
+
+    <div class="footer">
+        <p class="section-header sub2">Our Socials</p>
+        <p class="section-header sub3">0466 XXX XXX</p>
+        <p class="section-header sub3">@disciplecoffee</p>
+        <p class="section-header sub2">(c) 2026 Disciple Coffee Roasters</p>
+    </div>
+</body>
+</html>
