@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Store</title>
     <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
     <script src=scripts/scripts.js></script>
+</head>
+
+<body onload="initProductPage(); initFilters()">
 
     <div class="header-container">
         <div class="desktop-subheader left">
@@ -51,61 +52,17 @@
     <section class="page-content">
         <section class="store-content">
             <div class="menu">
-                <a href="#">Link 1</a>
+                <a>FILTERS (beta)</a>
                 <br>
-                <a href="#">Link 2</a>
+                <input type="checkbox" name="strengthStrong">Strong
                 <br>
-                <a href="#">Link 3</a>
+                <input type="checkbox" name="strengthMild">Mild
+                <br>
+                <input type="checkbox" name="strengthWeak">Weak
             </div>
 
-            <div class="content">
-                <div class="product">
-                    <div class="image">
-                        <image src="images/sakura.png" width="270px"></image>
-                    </div>
-                    
-                    <div class="product-text">
-                        <a class="preview-text">
-                            Sakura
-                        </a>
-                    </div>
-
-                    <div class="price">
-                        <a class="preview-text price">
-                            $24.99
-                        </a>
-                    </div>
-
-                    <div class="button">
-                        <button class="product-button" onclick="window.location.href='sakura.html?name=Sakura'">
-                            View
-                        </button>
-                    </div>
-                </div>
-
-                <div class="product">
-                    <div class="image">
-                        <image src="images/sakura.png" width="270px"></image>
-                    </div>
-                    
-                    <div class="product-text">
-                        <a class="preview-text">
-                            Chocho
-                        </a>
-                    </div>
-
-                    <div class="price">
-                        <a class="preview-text price">
-                            $24.99
-                        </a>
-                    </div>
-
-                    <div class="button">
-                        <button class="product-button" onclick="window.location.href='chocho.html?name=Chocho'">
-                            View
-                        </button>
-                    </div>
-                </div>
+            <div class="content" id="product-view">
+                
             </div>
         </section>
     </section>
