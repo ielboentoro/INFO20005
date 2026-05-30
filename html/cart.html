@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cart.css">
 </head>
 
 <body>
@@ -50,17 +51,27 @@
     </div>
 
     <section class="page-content">
-        <section class="product-content">
+        <section class="cart-content">
             <div class="content" id="cartContent">
                 
             </div>
 
             <div class="menu">
-                <button onclick="window.location.href='checkout.html'">Checkout</button>
                 <br>
-                <a href="#">Link 2</a>
-                <br>
-                <a href="#">Link 3</a>
+                <div class="checkout-summary">
+                    <div class="price">
+                        <b>Total Price</b>
+                        <br>
+                        <b class="price-text" id="totalPrice">$0.00</b>
+                    </div>
+
+                    <div class="itemCount">
+                        <b id="totalQty">0 Items</b>
+                    </div>
+                    <div class="buttonContainer">
+                        <button class="checkout-button" onclick="window.location.href='checkout.html'">Checkout</button>
+                    </div>
+                </div>
             </div>
 
             <div class="description">

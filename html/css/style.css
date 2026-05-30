@@ -522,13 +522,13 @@ ul li a {
     "preview aux";
   grid-template-columns: 1fr 3fr;
   gap: 3px;
-  background-color: black;
+  background-color: white;
+  border-radius: 50px;
   padding: 5px;
 
   width: 100%;
 }
 .cartBox div {
-  background-color: white;
   padding: 10px;
 }
 .cartBox div.title {
@@ -598,7 +598,6 @@ ul li a {
   .floating-header{
     width: 90%; 
   }
-
 }
 
 @font-face {

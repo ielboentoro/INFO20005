@@ -41,7 +41,9 @@ function initFilters(){
     filters = {
         strengthStrong: ["strong"],
         strengthMild: ["mild"],
-        strengthWeak: ["weak"]
+        strengthWeak: ["weak"],
+        espressoType: ["espresso"],
+        filterType: ["filter"]
     }
 }
 
@@ -131,6 +133,8 @@ function initCart(cart){
     for(i = 0; i < cart.length; i++){
         updateCartHTML(cart[i]);
     }
+    
+    updatePrice();
 }
 
 function initMiniCart(){
@@ -232,6 +236,18 @@ function updateStorePage(product){
             </button>
         </div>
     </div>`
+}
+
+function updatePrice(){
+    let currTotal = 0;
+    let currQuantity = 0;
+
+    for(i = 0; i < cart.length; i++){
+        currTotal += cart[i].price * cart[i].quantity;
+    }
+
+    document.getElementById("totalPrice").innerHTML = `$${currTotal}`;
+    document.getElementById("totalQty").innerHTML = `${cart.length} Items`;
 }
 
 function resetCart(){

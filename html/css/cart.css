@@ -1,0 +1,122 @@
+.cart-content{
+    display: grid;
+    justify-content: start;
+    grid-template-areas:
+        "content menu";
+    grid-template-columns: 3fr 1fr;
+    gap: 30px;
+    padding: 5px;
+
+    max-width:1000px;
+
+    width: 60%;
+    background-color: #F5EAE2;
+    border: none;
+}
+
+.cart-content div.menu{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    grid-area: menu;
+    text-align: left;
+}
+
+.cart-content div.content{
+    display: flex;
+    margin-top: 20px;
+    gap: 15px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    grid-area: content;
+}
+
+.checkout-summary{
+    display: grid;
+    height: 167px;
+    width: 355px;
+    background-color: white;
+    border-radius: 50px;
+
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "price itemCount"
+        "button button";
+}
+
+.checkout-summary div.price{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    margin-left: 30px;
+
+    grid-area: price;
+}
+
+.checkout-summary div.itemCount{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    
+    margin-right: 30px;
+
+    grid-area: itemCount;
+}
+
+.price-text{
+    font-family: "Source Serif Pro:Regular", sans-serif;
+    font-style: normal;
+    font-size: 32px;
+    letter-spacing: -0.26px;
+    text-align: left;
+
+    margin: 0;
+    line-height: 0;
+}
+
+.checkout-summary div.buttonContainer{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    grid-area: button;
+
+    margin-bottom: 20px;
+}
+
+.checkout-button{
+    width: 80%;
+    height: 100%;
+    max-height: 40px;
+    background-color: transparent;
+    border-radius: 50px;
+    border: 1px solid black;
+
+    text-align: center;
+    
+}
+
+@media (max-width: 1450px) {
+    .cart-content{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "content"
+        "menu";
+
+        width: 90%;
+
+        gap: 0px;
+    }
+
+    .cart-content div.menu{
+        width: 100%;
+    }
+
+    .checkout-summary{
+        min-width: 355px;
+    }
+}
