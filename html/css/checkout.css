@@ -91,6 +91,106 @@ span.price {
   color: grey;
 }
 
+.checkout-content{
+    display: grid;
+    justify-content: start;
+    grid-template-areas:
+        "content menu";
+    grid-template-columns: 3fr 1fr;
+    gap: 30px;
+    padding: 5px;
+
+    max-width:1000px;
+
+    width: 60%;
+    background-color: #F5EAE2;
+    border: none;
+}
+
+.checkout-content div.menu{
+    margin-top: 20px;
+    gap: 20px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    grid-area: menu;
+    text-align: left;
+}
+
+.checkout-content div.content{
+    display: flex;
+    margin-top: 20px;
+    gap: 15px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    grid-area: content;
+}
+
+@media (max-width: 1450px) {
+    .checkout-content{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "menu"
+        "content";
+        width: 80%;
+        gap: 0px;
+    }
+
+    .checkout-content div.content{
+      width: 100%;
+      margin-top: none;
+      gap: none;
+    }
+
+    .checkout-content div.menu{
+      width: 100%;
+    }
+}
+
+.cartBox {
+  display: grid;
+  grid-template-areas:
+    "preview title"
+    "preview aux";
+  grid-template-columns: 1fr 3fr;
+  gap: 3px;
+  background-color: white;
+  border-radius: 50px;
+  padding: 5px;
+
+  width: 100%;
+}
+.cartBox div {
+  padding: 10px;
+}
+.cartBox div.title {
+  grid-area: title;
+  text-align: center;
+}
+.cartBox div.preview {
+  grid-area: preview;
+
+  max-width: 330px;
+  justify-content: center;
+  align-items: center;
+}
+.cartBox div.aux {
+  grid-area: aux;
+
+  justify-content: center;
+  text-align: center;  
+}
+
+@media (max-width: 800px) {
+  .row {
+    flex-direction: column-reverse;
+  }
+  .col-25 {
+    margin-bottom: 20px;
+  }
+}
 @font-face {
     font-family: "Source Serif Pro:Regular";
     font-style: normal;

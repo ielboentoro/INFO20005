@@ -1,3 +1,39 @@
+button{
+    background: transparent;
+    border: 1px solid black;
+    border-radius: 50px;
+    min-width: 25px;
+    min-height: 25px;
+}
+
+.delete-product-button{
+    padding: 5%;
+
+    color: darkred;
+    border: 1px solid darkred;
+}
+
+.qty-button{
+    font-family: "Source Serif Pro:Regular", sans-serif;
+    font-style: normal;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    font-size: 26px;
+
+    min-width: 26px;
+    min-height: 26px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: none; 
+}
+
+.cart-quantity{
+    font-size: 20px;
+}
+
 .cart-content{
     display: grid;
     justify-content: start;
@@ -98,6 +134,116 @@
 
     text-align: center;
     
+}
+
+.cartBox {
+  display: grid;
+  grid-template-areas:
+    "preview title"
+    "preview aux";
+  grid-template-columns: 1fr 3fr;
+  gap: 3px;
+  background-color: white;
+  border-radius: 50px;
+  padding: 5px;
+
+  width: 100%;
+}
+.cartBox div {
+  padding: 10px;
+}
+.cartBox div.title {
+  grid-area: title;
+  text-align: center;
+}
+.cartBox div.preview {
+  grid-area: preview;
+  display: flex;
+
+  max-width: 330px;
+  justify-content: center;
+  align-items: center;
+}
+.cartBox div.aux {
+  grid-area: aux;
+
+  justify-content: center;
+  text-align: center;  
+}
+
+.cartItemControls{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "controls info";
+}
+
+.cartItemControls div.info{
+    grid-area: info;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.cartItemControls div.controls{
+    grid-area: controls;
+
+    display: flex;
+    align-items: center;
+    gap: 10%;
+}
+
+.cartItemInfo{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "info controls";
+        
+    width: 95%;
+}
+
+.cartItemInfo div.info{
+    grid-area: info;
+
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.cartItemInfo div.controls{
+    grid-area: controls;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10%;
+}
+
+.cart-title{
+    font-family: "Source Serif Pro:Regular", sans-serif;
+    font-style: normal;
+    font-size: 32px;
+    letter-spacing: -0.26px;
+    text-align: left;
+
+    margin: 0;
+    line-height: 32px;
+}
+
+.cart-title.smallText{
+    color: gray;
+    font-family: "Source Serif Pro:Italic", sans-serif;
+    font-style: italic;
+    font-size: 15px;
+    letter-spacing: -0.26px;
+    text-align: left;
+
+    margin: 0;
+    line-height: 15px;
 }
 
 @media (max-width: 1450px) {

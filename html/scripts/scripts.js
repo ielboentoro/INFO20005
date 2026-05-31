@@ -20,6 +20,7 @@ let cart = JSON.parse(localStorage.getItem('cart')) || [];
 let productFilters = []
 
 window.onload = function() {
+    insertHeader();
     const params = new URLSearchParams(window.location.search);
     const data = params.get("name");
 
@@ -164,25 +165,38 @@ function updateCartHTML(product){
     const elem = document.getElementById("cartContent");
 
     elem.innerHTML += 
-    `<div class="cartBox" id="${product.title}">
+    `<div class="cartBox">
         <div class="preview">
             <image class="small-img" src="${product.img_src1}" width="auto"></image>
         </div>
 
         <div class="title">
-            <a class="section-header product-description">${product.title}</a>
+            <div class="cartItemInfo">
+                <div class="info">
+                    <a class="cart-title smallText">Espresso Blend</a>
+                    <a class="cart-title">${product.title}</a>
+                </div>
+
+                <div class="controls">
+                    <button class="delete-product-button" onclick="deleteFromCart('${product.title}')">Delete</button>
+                </div>
+            </div>
         </div>
 
         <div class="aux">
-            <br>
-            <a class="product-description" id="${product.title}totalPrice">Total Price: ${product.price * product.quantity}</a>
-            <br>
-            <a>Quantity: ${product.quantity}</a>
-            <br>
-
-            <button onclick="deleteFromCart('${product.title}')">Delete</button>
-            <button onclick="addToCart('${product.title}')">Add Quantity</button>
-            <button onclick="deleteQtyCart('${product.title}')">Reduce Quantity</button>
+            <div class="cartItemControls">
+                <div class="info">
+                    <a class="cart-title smallText">${product.quantity} Items @</a>
+                    <a class="cart-title" id="TotalPrice">$${product.price * product.quantity}</a>
+                </div>
+                
+                <div class="controls">
+                    <button class="qty-button" onclick="addToCart('${product.title}')">+</button>
+                    <a class="cart-quantity"> ${product.quantity} </a>
+                    <button class="qty-button" onclick="deleteQtyCart('${product.title}')">-</button>
+                    <br>
+                </div>
+            </div>
         </div>
     </div>`
 }
@@ -191,20 +205,27 @@ function updateMiniCartHTML(product){
     const elem = document.getElementById("cartContent");
 
     elem.innerHTML += 
-    `<div class="cartBox" id="${product.title}">
+    `<div class="cartBox" id="TEST">
         <div class="preview">
             <image class="small-img" src="${product.img_src1}" width="auto"></image>
         </div>
 
         <div class="title">
-            <a class="section-header product-description">${product.title}</a>
+            <div class="cartItemInfo">
+                <div class="info">
+                    <a class="cart-title smallText">Espresso Blend</a>
+                    <a class="cart-title">${product.title}</a>
+                </div>
+            </div>
         </div>
 
         <div class="aux">
-            <br>
-            <a class="product-description" id="${product.title}totalPrice">Total Price: ${product.price * product.quantity}</a>
-            <br>
-            <a>Quantity: ${product.quantity}</a>
+            <div class="cartItemControls">
+                <div class="info">
+                    <a class="cart-title smallText">${product.quantity} Items @</a>
+                    <a class="cart-title" id="TotalPrice">$${product.price * product.quantity}</a>
+                </div>
+            </div>
         </div>
     </div>`
 }
@@ -254,4 +275,50 @@ function resetCart(){
     localStorage.clear();
 }
 
- 
+function insertHeader(){
+    document.getElementById("headerCont").innerHTML =
+    `<div class="desktop-subheader left">
+            <img src="images/brand-mini.png" alt="Disciple Coffee" height="53px" href="home.html">
+        </div>
+        
+        <div class="desktop-subheader spacerL"></div>
+
+        <div class="floating-header">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="store.html">Store</a></li>
+                <li><a href="locations.html">Locations</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+
+        <div class="desktop-subheader spacerR"></div>
+
+        <div class="desktop-subheader right">
+            <img src="images/svg/account.svg" alt="account" class="icon">
+            <a href="cart.html?name=Cart"><image src="images/svg/cart.svg" alt="cart" class="icon"></image></a>
+            <img src="images/svg/burger.svg" alt="burger" class="icon">
+        </div>
+
+        <div class="floating-header mobile">
+            <div class="floating-header-mobile-container">
+                <div class="logo">
+                    <img class="header-img" src="images/brand-mini.png" alt="Disciple Coffee" height="53px" href="home.html">
+                </div>
+                
+                <div class="dropdownCont">
+                    <div class="dropdown">
+                        <button class="dropbtn"><img src="images/svg/burger.svg" alt="burger" class="icon"></button>
+                        <div class="dropdown-content">
+                            <a href="home.html"><image src="images/svg/home.svg" alt="home" class="icon dropdown"></image> Home</a>
+                            <a href="store.html"><image src="images/svg/store.svg" alt="cart" class="icon dropdown"></image> Store</a>
+                            <a href="locations.html"><image src="images/svg/locations.svg" alt="locations" class="icon dropdown"></image> Locations</a>
+                            <a href="about.html"><image src="images/svg/about.svg" alt="about" class="icon dropdown"></image> About</a>
+                            <a href="cart.html?name=Cart"><image src="images/svg/cart.svg" alt="cart" class="icon dropdown"></image> Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>`
+    ;
+}

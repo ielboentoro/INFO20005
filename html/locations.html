@@ -5,37 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Retail</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <script src="scripts/scripts.js"></script>
 </head>
-<body>
-    <script src=script.js></script>
-
-    <div class="header-container">
-        <div class="desktop-subheader left">
-            <img src="images/brand-mini.png" alt="Disciple Coffee" height="53px" href="home.html">
-        </div>
-        
-        <div class="desktop-subheader spacerL"></div>
-
-        <div class="floating-header">
-            <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="store.html">Store</a></li>
-                <li><a href="locations.html">Locations</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
-        </div>
-
-        <div class="desktop-subheader spacerR"></div>
-
-        <div class="desktop-subheader right">
-            <img src="images/svg/account.svg" alt="account" class="icon">
-            <a href="cart.html?name=Cart"><image src="images/svg/cart.svg" alt="cart" class="icon"></image></a>
-            <img src="images/svg/burger.svg" alt="burger" class="icon">
-        </div>
-
-        <div class="floating-header mobile">
-            <img class="header-img" src="images/brand-mini.png" alt="Disciple Coffee" height="53px" href="home.html">
-        </div>
+<body onload="insertHeader()">
+    <div class="header-container" id="headerCont">
+      
     </div>
     
     <div class="page-top">
