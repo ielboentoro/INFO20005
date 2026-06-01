@@ -29,34 +29,6 @@ ul li a {
     width: 100%;
 }
 
-.header-img{
-    margin: 20px;
-}
-
-.homepage-top{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    flex-direction: column;
-
-    width: 100%;
-    height: 578px;
-    background-color: #EBCBAE;
-    border: none;
-    
-}.page-top{
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
-    flex-direction: row;
-
-    width: 100%;
-    height: 345px;
-    background-color: #F0E0D4;
-    border: none;
-    
-}
-
 .page-content
 {
     display: flex;
@@ -69,51 +41,6 @@ ul li a {
     background-color: #F5EAE2;
     border: none;
     
-}
-
-.homepage-sub{
-    display: flex;
-
-    width: 100%;
-    height: 296px;
-    background-color: #F0E0D4;
-    border: none;
-}
-
-.homepage-sub-imgContainer{
-    display: flex;
-    height: 296px;
-    border: none;
-    align-items: flex-start;
-}
-
-.homepage-sub-textContainer{
-    display: flex;
-    flex-grow: 1;
-    width: auto;
-    max-height: 296px;
-    border: none;
-    justify-content: flex-start;
-    align-items: flex-end;
-    flex-direction: column;
-
-    padding: 20px;
-}
-
-.homepage-sub.style1{
-    background-color: #F0E0D4;
-}
-
-.homepage-sub.style2{
-    background-color: #F5EAE2;
-}
-
-.homepage-sub.style3{
-    background-color: #F5EAE2;
-}
-
-.homepage-sub.style4{
-    background-color: #F0E0D4;
 }
 
 .subsite-header{
@@ -272,6 +199,19 @@ ul li a {
     align-items: center;
 }
 
+.page-top{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-direction: row;
+
+    width: 100%;
+    height: 345px;
+    background-color: #F0E0D4;
+    border: none;
+}
+
+
 .product-content div.description{
     grid-area: description;
     display: block;
@@ -403,56 +343,6 @@ ul li a {
     height: auto;
 }
 
-@media (max-width: 1450px) {
-  .flex {
-    flex-direction: column;
-  }
-
-  .homepage-sub.style3{
-    background-color:  #F0E0D4;
-  }
-
-  .homepage-sub.style4{
-    background-color:  #F5EAE2;
-  }
-
-  .desktop-subheader.left{
-    display: none;
-  }
-
-  .desktop-subheader.spacerL{
-    display: none;
-  }
-
-  .desktop-subheader.right{
-    display: none;
-  }
-
-  .desktop-subheader.spacerR{
-    display: none;
-  }
-
-  .floating-header{
-    display: none;
-  }
-  
-  .floating-header.mobile{
-    display: flex;
-    width: 90%;
-  }
-
-  .subsite-header{
-    font-size: 48px;
-  }
-
-  .subsite-header-container{
-    width: 100%;
-  }
-
-  .floating-header{
-    width: 90%; 
-  }
-}
 
 @font-face {
     font-family: "Source Serif Pro:Regular";

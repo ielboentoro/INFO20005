@@ -1,3 +1,7 @@
+.header-img{
+    margin: 20px;
+}
+
 .floating-header{
     display: flex;
     justify-content: center;
