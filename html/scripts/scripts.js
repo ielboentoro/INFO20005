@@ -46,6 +46,14 @@ function initFilters(){
         espressoType: ["espresso"],
         filterType: ["filter"]
     }
+
+    const searchInput = document.getElementById('query');
+
+    searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase();
+
+        filterProducts(query);
+    });
 }
 
 function filterCart(){
@@ -147,6 +155,21 @@ function initMiniCart(){
 function initProductPage(){
     for(i = 0; i < products_arr.length; i++){
         updateStorePage(products_arr[i]);
+    }
+}
+
+function filterProducts(string){
+    console.log(string);
+    const elem = document.getElementById("product-view");
+    elem.innerHTML = ``;
+
+    for(i = 0; i < products_arr.length; i++){
+        let q = products_arr[i].title.toLowerCase().trim();
+        console.log(q);
+        console.log(q.includes(string));
+        if(q.includes(string)){
+            updateStorePage(products_arr[i]);
+        }
     }
 }
 
