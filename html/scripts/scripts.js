@@ -84,6 +84,14 @@ function initFilters(){
 
         filterProducts(query);
     });
+
+    const mobileSearchInput = document.getElementById('query2');
+
+    mobileSearchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase();
+
+        filterProducts(query);
+    });
 }
 
 function filterCart(){
