@@ -201,11 +201,15 @@ function filterProducts(string){
     const elem = document.getElementById("product-view");
     elem.innerHTML = ``;
 
+    document.getElementById("product-view").innerHTML = ``;
+
+    productFilters = Array.from(checkBoxes).filter(element => element.checked).flatMap(element => filters[element.getAttribute('name')]);
+
+    console.log(productFilters);
+
     for(i = 0; i < products_arr.length; i++){
         let q = products_arr[i].title.toLowerCase().trim();
-        console.log(q);
-        console.log(q.includes(string));
-        if(q.includes(string)){
+        if(q.includes(string) && productFilters.every(value => products_arr[i].tags.includes(value))){
             updateStorePage(products_arr[i]);
         }
     }
