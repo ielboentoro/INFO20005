@@ -139,35 +139,6 @@ ul li a {
     filter: brightness(0) saturate(100%);
 }
 
-.store-content{
-    display: grid;
-    justify-content: start;
-    grid-template-areas:
-        "menu content";
-    grid-template-columns: 1fr 3fr;
-    gap: 30px;
-    padding: 5px;
-
-    width: 60%;
-    background-color: #F5EAE2;
-    border: none;
-}
-
-.store-content div.menu{
-    grid-area: menu;
-    text-align: right;
-}
-
-.store-content div.content{
-    display: grid;
-    padding: 10px;
-    gap: 15px;
-    grid-template-columns: auto auto auto;
-    justify-content: start;
-    grid-area: content;
-}
-
-
 .product-content{
     display: grid;
     justify-content: start;
@@ -220,62 +191,9 @@ ul li a {
 }
 
 .product-image{
-    width: 100%;
     max-width: 570px;
-}
-
-.product{
-    width: 270px;
-    height: 401px;
-    display: grid;
-
-    grid-template-areas:
-        "image image"
-        "product-text price"
-        "button button";
-
-    grid-template-columns: 2fr 2fr;
-
-    gap: 0px;
-    padding: 0px;
-
-    border-radius: 50px;
-
-}
-
-.product div.image{
-    grid-area: image;
-    grid-column: span 2;
-    
-}
-
-.product div.product-text{
-    grid-area: product-text;
-}
-
-.preview-text{
-    font-family: "Source Serif Pro:Regular", sans-serif;
-    font-style: regular;
-    font-size: 32px;
-    
-    margin-left: 20px;
-}
-
-.preview-text.price{
-    text-align: right;
-}
-
-.product div.price{
-    grid-area: price;
-}
-
-.product div.button{
-    display: flex;
-
     width: 100%;
-    height: 100%;
-    justify-content: center;
-    grid-area: button;
+    height: auto;
 }
 
 .product-button{
@@ -309,27 +227,6 @@ ul li a {
     display: flex;
     flex-grow: 1;
     align-items: flex-end;
-}
-
-.store-container{
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    width: 1280px;
-}
-
-.store-filter-container{
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    width: 264px;
-}
-
-.store-products-container{
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    width: 844px;
 }
 
 .filter-desktop{

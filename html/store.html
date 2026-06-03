@@ -6,6 +6,7 @@
     <title>Store</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/store.css">
     <script src="scripts/scripts.js"></script>
 </head>
 
@@ -25,24 +26,22 @@
     <section class="page-content">
         <section class="store-content">
             <div class="menu">
-                <input type="text" id="query" name="query"><br><br>
-                <a>Roast Strength</a>
-                <br>
-                <input type="checkbox" name="strengthStrong">Strong
-                <br>
-                <input type="checkbox" name="strengthMild">Mild
-                <br>
-                <input type="checkbox" name="strengthWeak">Weak
-                
-                <br>
-                <br>
+                <section class="filter-container">
+                    <a class="filter-text header2">Filter Items</a>
+                    <br>
 
-                <a>Blend Type</a>
-                <br>
-                <input type="checkbox" name="filterType">Filter
-                <br>
-                <input type="checkbox" name="espressoType">Espresso
-                <br>
+                    <a class="filter-text header">Search</a>
+                    <input type="text" id="query" name="query"><br><br>
+                    <a class="filter-text header">Roast Strength</a>
+                    <a><input type="checkbox" name="strengthStrong">Strong</a>
+                    <a><input type="checkbox" name="strengthMild">Mild</a>
+                    <a><input type="checkbox" name="strengthWeak">Weak</a>
+                    <br>
+                    
+                    <a class="filter-text header">Blend Type</a>
+                    <a><input type="checkbox" name="filterType">Filter</a>
+                    <a><input type="checkbox" name="espressoType">Espresso</a>
+                </section>
             </div>
 
             <div class="content" id="product-view">

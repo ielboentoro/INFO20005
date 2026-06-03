@@ -4,13 +4,43 @@ products_arr = [
         price: "24.99",
         img_src1: "images/sakura.png",
         href: "sakura.html",
-        tags: ['strong', 'espresso']},
+        tags: ['strong', 'Espresso']},
 
         {title: "Chocho",
         price: "24.99",
         img_src1: "images/chocho.png",
         href: "chocho.html",
-        tags: ['mild', 'filter']}
+        tags: ['mild', 'Filter']},
+
+        {title: "Zen",
+        price: "19.99",
+        img_src1: "images/zen.png",
+        href: "zen.html",
+        tags: ['mild', 'Filter']},
+
+        {title: "Brazil",
+        price: "14.99",
+        img_src1: "images/brazil.png",
+        href: "brazil.html",
+        tags: ['mild', 'Espresso']},
+
+        {title: "Home",
+        price: "9.99",
+        img_src1: "images/home.png",
+        href: "home_b.html",
+        tags: ['weak', 'Filter']},
+        
+        {title: "Guatemala",
+        price: "9.99",
+        img_src1: "images/guatemala.png",
+        href: "guatemala.html",
+        tags: ['weak', 'Filter']},
+
+        {title: "Kenya",
+        price: "29.99",
+        img_src1: "images/kenya.png",
+        href: "kenya.html",
+        tags: ['mild', 'Espresso']}
     ]
 
 const params = new URLSearchParams(window.location.search);
@@ -43,8 +73,8 @@ function initFilters(){
         strengthStrong: ["strong"],
         strengthMild: ["mild"],
         strengthWeak: ["weak"],
-        espressoType: ["espresso"],
-        filterType: ["filter"]
+        espressoType: ["Espresso"],
+        filterType: ["Filter"]
     }
 
     const searchInput = document.getElementById('query');
@@ -259,18 +289,20 @@ function updateStorePage(product){
     elem.innerHTML +=
     `<div class="product">
         <div class="image">
-            <image src="${product.img_src1}" width="270px"></image>
+            <image src="${product.img_src1}" class="product-image"></image>
         </div>
         
         <div class="product-text">
+            <a class="preview-text subheader">For ${product.tags[1]}</a>
             <a class="preview-text">
                 ${product.title}
             </a>
         </div>
 
         <div class="price">
+            <a class="preview-text subheader">From</a>
             <a class="preview-text price">
-                ${product.price}
+                $${product.price}
             </a>
         </div>
 
