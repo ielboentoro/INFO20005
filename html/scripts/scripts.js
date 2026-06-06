@@ -52,9 +52,24 @@ products_arr = [
 
 const params = new URLSearchParams(window.location.search);
 const productData = params.get("name");
+const productWeight = params.get("weight");
+const productGrind = params.get("grind");
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 let productFilters = []
+let product_quantity = 1;
+
+const variants_weight = [
+    {weight: "250g", multiplier: 1},
+    {weight: "500g", multiplier: 2},
+    {weight: "1kg", multiplier: 4}
+]
+
+const variants_grind = [
+    {grind: "grind-espresso", title: "Espresso Grind"},
+    {grind: "grind-filter", title: "Filter Grind"},
+    {grind: "whole", title: "Whole Beans"}
+]
 
 window.onload = function() {
     insertHeader();
@@ -114,28 +129,73 @@ function filterCart(){
     }
 }
 
+function changeVariant(itemID){
+    const index = document.getElementById(itemID).getAttribute('name');
+    window.location.href=`product.html?name=${productData}&weight=${variants_weight[index].weight}&grind=${productGrind}`;
+}
+
+function changeGrind(itemID){
+    const index = document.getElementById(itemID).getAttribute('name');
+    window.location.href=`product.html?name=${productData}&weight=${productWeight}&grind=${variants_grind[index].grind}`;
+}
+
 function initPage(product) {
+    product_quantity = 1;
+    document.getElementById("quantity").innerHTML = product_quantity;
     const item = products_arr.find(element => element.title === product);
+    const weight = variants_weight.find(element => element.weight === productWeight);
+    const grind = variants_grind.find(element => element.grind === productGrind);
+
+    console.log(weight.multiplier);
+
     document.getElementById("product-title").innerHTML = `${item.title}`
     document.getElementById("prodImage").src = item.img_src1;
-    document.getElementById("product-price").innerHTML = `$${item.price}`;
+    document.getElementById("product-price").innerHTML = `$${item.price * weight.multiplier}`;
     document.getElementById("description").innerHTML = `${item.description}`
+
+    document.getElementById(productWeight).classList.toggle("selected");
+    document.getElementById(productGrind).classList.toggle("selected");
+
+    document.getElementById("variant-weight").innerHTML = `${productWeight}`;
+    document.getElementById("variant-grind").innerHTML = `${grind.title}`;
+
+    for(i = 0; i < variants_weight.length; i++){
+        document.getElementById(variants_weight[i].weight).addEventListener("click", (event) => {
+            const itemID = event.currentTarget.id;
+            changeVariant(itemID)
+        });
+    }
+
+    for(i = 0; i < variants_grind.length; i++){
+        document.getElementById(variants_grind[i].grind).addEventListener("click", (event) => {
+            const itemID = event.currentTarget.id;
+            changeGrind(itemID);
+        });
+    }
 }
 
 function addToCart(product){
     const item = products_arr.find(element => element.title === product);
+    const weight = variants_weight.find(element => element.weight === productWeight);
+    const grind = variants_grind.find(element => element.grind === productGrind);
 
-    console.log(item);
+    const product_title = `${item.title} ${productWeight} ${grind.title}`;
 
+    if(cart.find(element => element.title === product_title)){
+        cart.find(element => element.title === product_title).quantity += product_quantity;
+    }
+    else{  
+        cart.push({title: product_title, price: item.price * weight.multiplier, img_src1: item.img_src1, quantity: product_quantity});
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+function addQtyCart(product_title){
     const params = new URLSearchParams(window.location.search);
     const data = params.get("name");
 
-    if(cart.find(element => element.title === product)){
-        cart.find(element => element.title === product).quantity++;
-    }
-    else{
-        cart.push({title: item.title, price: item.price, img_src1: item.img_src1, quantity: 1});
-    }
+    cart.find(element => element.title === product_title).quantity++;
 
     if(data === "Cart"){
         refreshCart(cart);
@@ -167,6 +227,18 @@ function deleteQtyCart(product){
     }
 
     localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+function addQtyProduct(){
+    product_quantity++;
+    document.getElementById("quantity").innerHTML = product_quantity;
+}
+
+function deleteQtyProduct(){
+    if(product_quantity != 1){
+        product_quantity--;
+    }
+    document.getElementById("quantity").innerHTML = product_quantity;
 }
 
 function deleteFromCart(product){
@@ -239,6 +311,8 @@ function refreshCart(cart){
 function updateCartHTML(product){
     const elem = document.getElementById("cartContent");
 
+    console.log(product.title);
+
     elem.innerHTML += 
     `<div class="cartBox">
         <div class="preview">
@@ -248,7 +322,7 @@ function updateCartHTML(product){
         <div class="title">
             <div class="cartItemInfo">
                 <div class="info">
-                    <a class="cart-title smallText">Espresso Blend</a>
+                    <a class="cart-title smallText">Product</a>
                     <a class="cart-title">${product.title}</a>
                 </div>
 
@@ -266,7 +340,7 @@ function updateCartHTML(product){
                 </div>
                 
                 <div class="controls">
-                    <button class="qty-button" onclick="addToCart('${product.title}')">+</button>
+                    <button class="qty-button" onclick="addQtyCart('${product.title}')">+</button>
                     <a class="cart-quantity"> ${product.quantity} </a>
                     <button class="qty-button" onclick="deleteQtyCart('${product.title}')">-</button>
                     <br>
@@ -288,7 +362,7 @@ function updateMiniCartHTML(product){
         <div class="title">
             <div class="cartItemInfo">
                 <div class="info">
-                    <a class="cart-title smallText">Espresso Blend</a>
+                    <a class="cart-title smallText">Product</a>
                     <a class="cart-title">${product.title}</a>
                 </div>
             </div>
@@ -329,7 +403,7 @@ function updateStorePage(product){
         </div>
 
         <div class="button">
-            <button class="product-button" onclick="window.location.href='product.html?name=${product.title}'">
+            <button class="product-button" onclick="window.location.href='product.html?name=${product.title}&weight=250g&grind=grind-espresso'">
                 View
             </button>
         </div>

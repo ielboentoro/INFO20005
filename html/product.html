@@ -33,6 +33,37 @@
 
             <div class="menu">
                 <section class="product-summary">
+                    <div class="options">
+                        <b>Weight Options</b>
+                        <br>
+
+                        <div class="options-container">
+                            <button class="options-button" id="250g" name="0">250g</button>
+                            <button class="options-button" id="500g" name="1">500g</button>
+                            <button class="options-button" id="1kg" name="2">1kg</button>
+                        </div>
+
+                        <br>
+                        <b>Grind Options</b>
+                        <br>
+
+                        <div class="options-container">
+                            <button class="options-button" id="grind-espresso" name="0">Espresso</button>
+                            <button class="options-button" id="grind-filter" name="1">Filter</button>
+                            <button class="options-button" id="whole" name="2">Whole Beans</button>
+                        </div>
+
+                        <br>
+                        <b>Quantity</b>
+                        <br>
+
+                        <div class="options-container">
+                            <button class="qty-button" onclick="addQtyProduct()">+</button>
+                            <a class="cart-quantity" id="quantity">0</a>
+                            <button class="qty-button" onclick="deleteQtyProduct()">-</button>
+                        </div>
+                    </div>
+
                     <div class="price">
                         <b>Price</b>
                         <br>
@@ -41,8 +72,8 @@
 
                     <div class="itemCount">
                         <br>
-                        <b id="variant-weight">250g</b>
-                        <b id="variant-grind">Whole Beans</b>
+                        <b id="variant-weight"></b>
+                        <b id="variant-grind"></b>
                     </div>
 
                     <div class="buttonContainer">
