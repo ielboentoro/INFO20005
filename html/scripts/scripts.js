@@ -4,43 +4,50 @@ products_arr = [
         price: "24.99",
         img_src1: "images/sakura.png",
         href: "sakura.html",
-        tags: ['strong', 'Espresso']},
+        tags: ['strong', 'Espresso'],
+        description: "The sakura blend is an exclusive seasonal blend inspired by the cherry blossoms of Japan. It’s versatile, and suitable for both espresso and filter. However, we prefer it brewed with an espresso machine."},
 
         {title: "Chocho",
         price: "24.99",
         img_src1: "images/chocho.png",
         href: "chocho.html",
-        tags: ['mild', 'Filter']},
+        tags: ['mild', 'Filter'],
+        description: "Coming soon..."},
 
         {title: "Zen",
         price: "19.99",
         img_src1: "images/zen.png",
         href: "zen.html",
-        tags: ['mild', 'Filter']},
+        tags: ['mild', 'Filter'],
+        description: "Coming soon..."},
 
         {title: "Brazil",
         price: "14.99",
         img_src1: "images/brazil.png",
         href: "brazil.html",
-        tags: ['mild', 'Espresso']},
+        tags: ['mild', 'Espresso'],
+        description: "Coming soon..."},
 
         {title: "Home",
         price: "9.99",
         img_src1: "images/home.png",
         href: "home_b.html",
-        tags: ['weak', 'Filter']},
+        tags: ['weak', 'Filter'],
+        description: "Coming soon..."},
         
         {title: "Guatemala",
         price: "9.99",
         img_src1: "images/guatemala.png",
         href: "guatemala.html",
-        tags: ['weak', 'Filter']},
+        tags: ['weak', 'Filter'],
+        description: "Coming soon..."},
 
         {title: "Kenya",
         price: "29.99",
         img_src1: "images/kenya.png",
         href: "kenya.html",
-        tags: ['mild', 'Espresso']}
+        tags: ['mild', 'Espresso'],
+        description: "Coming soon..."}
     ]
 
 const params = new URLSearchParams(window.location.search);
@@ -108,8 +115,10 @@ function filterCart(){
 
 function initPage(product) {
     const item = products_arr.find(element => element.title === product);
-    console.log(item.img_src1);
+    document.getElementById("product-title").innerHTML = `${item.title}`
     document.getElementById("prodImage").src = item.img_src1;
+    document.getElementById("product-price").innerHTML = `$${item.price}`;
+    document.getElementById("description").innerHTML = `${item.description}`
 }
 
 function addToCart(product){
@@ -319,7 +328,7 @@ function updateStorePage(product){
         </div>
 
         <div class="button">
-            <button class="product-button" onclick="window.location.href='${product.href}?name=${product.title}'">
+            <button class="product-button" onclick="window.location.href='product.html?name=${product.title}'">
                 View
             </button>
         </div>

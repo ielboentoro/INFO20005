@@ -6,19 +6,20 @@
     <title>Site Title</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/product.css">
+    <script src="scripts/scripts.js"></script>
 </head>
 
 <body>
-    <script src=scripts/scripts.js></script>
-
     <div class="header-container" id="headerCont">
+
     </div>
     
     <div class="page-top">
         <div class="subsite-header-spacer"></div>
 
         <div class="subsite-header-container">
-            <p class="subsite-header">Chocho</p>
+            <p class="subsite-header" id="product-title"></p>
         </div>
 
         <div class="subsite-header-spacer"></div>
@@ -31,7 +32,23 @@
             </div>
 
             <div class="menu">
-                <button onclick="addToCart(productData)">Add to Cart</button>
+                <section class="product-summary">
+                    <div class="price">
+                        <b>Price</b>
+                        <br>
+                        <a class="price-text" id="product-price">$0.00</a>
+                    </div>
+
+                    <div class="itemCount">
+                        <br>
+                        <b id="variant-weight">250g</b>
+                        <b id="variant-grind">Whole Beans</b>
+                    </div>
+
+                    <div class="buttonContainer">
+                        <button onclick="addToCart(productData)" class="cart-button">Add to Cart</button>
+                    </div>
+                </section>
             </div>
 
             <div class="description">
@@ -40,7 +57,7 @@
                 </a>
                 <br>
                 <br>
-                <a class="product-description">Coming soon...</a>
+                <a class="product-description" id="description"></a>
             </div>
         </section>
     </section>
