@@ -71,10 +71,11 @@ window.onload = function() {
 
 let checkBoxes;
 let filters;
+let query = "";
 
 function initFilters(){
     checkBoxes = document.querySelectorAll("input[type=checkbox]");
-    checkBoxes.forEach(element => element.addEventListener("change", filterCart));
+    checkBoxes.forEach(element => element.addEventListener("change", filterProducts));
 
     filters = {
         strengthStrong: ["strong"],
@@ -87,17 +88,17 @@ function initFilters(){
     const searchInput = document.getElementById('query');
 
     searchInput.addEventListener('input', (e) => {
-        const query = e.target.value.toLowerCase();
+        query = e.target.value.toLowerCase();
 
-        filterProducts(query);
+        filterProducts();
     });
 
     const mobileSearchInput = document.getElementById('query2');
 
     mobileSearchInput.addEventListener('input', (e) => {
-        const query = e.target.value.toLowerCase();
+        query = e.target.value.toLowerCase();
 
-        filterProducts(query);
+        filterProducts();
     });
 }
 
@@ -205,8 +206,8 @@ function initProductPage(){
     }
 }
 
-function filterProducts(string){
-    console.log(string);
+function filterProducts(){
+    console.log(query);
     const elem = document.getElementById("product-view");
     elem.innerHTML = ``;
 
@@ -218,7 +219,7 @@ function filterProducts(string){
 
     for(i = 0; i < products_arr.length; i++){
         let q = products_arr[i].title.toLowerCase().trim();
-        if(q.includes(string) && productFilters.every(value => products_arr[i].tags.includes(value))){
+        if(q.includes(query) && productFilters.every(value => products_arr[i].tags.includes(value))){
             updateStorePage(products_arr[i]);
         }
     }
