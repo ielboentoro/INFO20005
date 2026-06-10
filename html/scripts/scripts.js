@@ -149,6 +149,8 @@ function initPage(product) {
 
     product_price = item.price * weight.multiplier;
 
+    document.getElementById("title").innerHTML = `${item.title} | Disciple Coffee Store`;
+
     document.getElementById("product-title").innerHTML = `${item.title}`
     document.getElementById("prodImage").src = item.img_src1;
     document.getElementById("product-price").innerHTML = `$${item.price * weight.multiplier}`;
@@ -245,7 +247,12 @@ function deleteQtyProduct(){
     if(product_quantity != 1){
         product_quantity--;
     }
+
     document.getElementById("quantity").innerHTML = product_quantity;
+
+    let visual_price = product_price * product_quantity;
+    visual_price = visual_price.toFixed(2);
+    document.getElementById("product-price").innerHTML = `$${visual_price}`;
 }
 
 function deleteFromCart(product){
