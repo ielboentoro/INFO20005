@@ -182,7 +182,7 @@
 
 .dropdown:hover .dropbtn {background-color: transparent;}
 
-@media (max-width: 1450px) {
+@media (max-width: 1439px) {
   .flex {
     flex-direction: column;
   }

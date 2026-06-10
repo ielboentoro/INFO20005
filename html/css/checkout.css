@@ -100,7 +100,7 @@ span.price {
     gap: 30px;
     padding: 5px;
 
-    max-width: 1450px;
+    max-width: 1439px;
 
     width: 60%;
     background-color: #F5EAE2;
@@ -128,7 +128,7 @@ span.price {
     grid-area: content;
 }
 
-@media (max-width: 1450px) {
+@media (max-width: 1439px) {
     .checkout-content{
         grid-template-columns: 1fr;
         grid-template-areas: 

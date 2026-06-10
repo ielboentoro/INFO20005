@@ -86,7 +86,7 @@
     border-radius: 50px;
 } 
 
-@media (max-width: 1450px){
+@media (max-width: 1439px){
     .section-img{
         object-fit: cover;
         object-position: right;
