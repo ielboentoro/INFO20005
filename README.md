@@ -1,7 +1,7 @@
 # INFO20005 Assignment 3
 
 ## Scope
-This is a redesign of Disciple Coffee's website (https://disciplecoffe.com.au) made for INFO20005 at the University of Melbourne.
+This is a redesign of Disciple Coffee's website (https://disciplecoffee.com.au) made for INFO20005 at the University of Melbourne.
 It was created as part of my learning in HTML, JavaScript, and CSS.
 
 The site is live at https://ielboentoro.github.io/INFO20005/
