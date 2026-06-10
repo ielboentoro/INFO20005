@@ -1,0 +1,29 @@
+.afterCheckout{
+    margin-top: 20px;
+    width: 40%;
+    max-width: 1450px;
+    gap: 20px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    grid-area: menu;
+    text-align: left;
+}
+
+.page-content{
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.finish-button{
+    min-height: 50px;
+    height: 100%;
+    padding: 10px 10px 10px 10px;
+}
+
+@media (max-width: 1450px){
+    .afterCheckout{
+        width: 80%;
+    }
+}

@@ -32,7 +32,6 @@
 .product-content div.description{
     grid-area: description;
     display: block;
-    justify-content: right;
     max-width: 570px;
 }
 
@@ -177,6 +176,19 @@
         "image"
         "description"
         "menu";
+
+        width: 100%;
+    }
+
+    .product-content div.menu{
+        display: flex;
+        justify-content: center;
+    }
+
+    .product-content div.description{
+        margin-left: 50px;
+        margin-right: 50px;
+        max-width: 1450px;
     }
 
     .product-summary{

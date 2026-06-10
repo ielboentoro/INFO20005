@@ -1,10 +1,4 @@
-button{
-    background: transparent;
-    border: 1px solid black;
-    border-radius: 50px;
-    min-width: 25px;
-    min-height: 25px;
-}
+
 
 .delete-product-button{
     padding: 5%;

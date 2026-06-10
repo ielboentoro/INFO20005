@@ -4,49 +4,49 @@ products_arr = [
         price: "24.99",
         img_src1: "images/sakura.png",
         href: "sakura.html",
-        tags: ['strong', 'Espresso'],
+        tags: ['Strong', 'Espresso'],
         description: "The sakura blend is an exclusive seasonal blend inspired by the cherry blossoms of Japan. It’s versatile, and suitable for both espresso and filter. However, we prefer it brewed with an espresso machine."},
 
         {title: "Chocho",
         price: "24.99",
         img_src1: "images/chocho.png",
         href: "chocho.html",
-        tags: ['mild', 'Filter'],
+        tags: ['Mild', 'Filter'],
         description: "Coming soon..."},
 
         {title: "Zen",
         price: "19.99",
         img_src1: "images/zen.png",
         href: "zen.html",
-        tags: ['mild', 'Filter'],
+        tags: ['Mild', 'Filter'],
         description: "Coming soon..."},
 
         {title: "Brazil",
         price: "14.99",
         img_src1: "images/brazil.png",
         href: "brazil.html",
-        tags: ['mild', 'Espresso'],
+        tags: ['Mild', 'Espresso'],
         description: "Coming soon..."},
 
         {title: "Home",
         price: "9.99",
         img_src1: "images/home.png",
         href: "home_b.html",
-        tags: ['weak', 'Filter'],
+        tags: ['Weak', 'Filter'],
         description: "Coming soon..."},
         
         {title: "Guatemala",
         price: "9.99",
         img_src1: "images/guatemala.png",
         href: "guatemala.html",
-        tags: ['weak', 'Filter'],
+        tags: ['Weak', 'Filter'],
         description: "Coming soon..."},
 
         {title: "Kenya",
         price: "29.99",
         img_src1: "images/kenya.png",
         href: "kenya.html",
-        tags: ['mild', 'Espresso'],
+        tags: ['Mild', 'Espresso'],
         description: "Coming soon..."}
     ]
 
@@ -58,6 +58,7 @@ const productGrind = params.get("grind");
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 let productFilters = []
 let product_quantity = 1;
+let product_price = 0;
 
 const variants_weight = [
     {weight: "250g", multiplier: 1},
@@ -93,9 +94,9 @@ function initFilters(){
     checkBoxes.forEach(element => element.addEventListener("change", filterProducts));
 
     filters = {
-        strengthStrong: ["strong"],
-        strengthMild: ["mild"],
-        strengthWeak: ["weak"],
+        strengthStrong: ["Strong"],
+        strengthMild: ["Mild"],
+        strengthWeak: ["Weak"],
         espressoType: ["Espresso"],
         filterType: ["Filter"]
     }
@@ -146,7 +147,7 @@ function initPage(product) {
     const weight = variants_weight.find(element => element.weight === productWeight);
     const grind = variants_grind.find(element => element.grind === productGrind);
 
-    console.log(weight.multiplier);
+    product_price = item.price * weight.multiplier;
 
     document.getElementById("product-title").innerHTML = `${item.title}`
     document.getElementById("prodImage").src = item.img_src1;
@@ -189,6 +190,8 @@ function addToCart(product){
     }
 
     localStorage.setItem('cart', JSON.stringify(cart));
+
+    alert("Product added to Cart!")
 }
 
 function addQtyCart(product_title){
@@ -232,6 +235,10 @@ function deleteQtyCart(product){
 function addQtyProduct(){
     product_quantity++;
     document.getElementById("quantity").innerHTML = product_quantity;
+
+    let visual_price = product_price * product_quantity;
+    visual_price = visual_price.toFixed(2);
+    document.getElementById("product-price").innerHTML = `$${visual_price}`;
 }
 
 function deleteQtyProduct(){
@@ -311,7 +318,8 @@ function refreshCart(cart){
 function updateCartHTML(product){
     const elem = document.getElementById("cartContent");
 
-    console.log(product.title);
+    let totalPrice = product.price*product.quantity;
+    totalPrice = totalPrice.toFixed(2);
 
     elem.innerHTML += 
     `<div class="cartBox">
@@ -336,7 +344,7 @@ function updateCartHTML(product){
             <div class="cartItemControls">
                 <div class="info">
                     <a class="cart-title smallText">${product.quantity} Items @</a>
-                    <a class="cart-title" id="TotalPrice">$${product.price * product.quantity}</a>
+                    <a class="cart-title" id="TotalPrice">$${totalPrice}</a>
                 </div>
                 
                 <div class="controls">
@@ -352,6 +360,8 @@ function updateCartHTML(product){
 
 function updateMiniCartHTML(product){
     const elem = document.getElementById("cartContent");
+    let totalPrice = product.price * product.quantity;
+    totalPrice.toFixed(2);
 
     elem.innerHTML += 
     `<div class="cartBox" id="TEST">
@@ -372,7 +382,7 @@ function updateMiniCartHTML(product){
             <div class="cartItemControls">
                 <div class="info">
                     <a class="cart-title smallText">${product.quantity} Items @</a>
-                    <a class="cart-title" id="TotalPrice">$${product.price * product.quantity}</a>
+                    <a class="cart-title" id="TotalPrice">$${totalPrice}</a>
                 </div>
             </div>
         </div>
@@ -389,7 +399,7 @@ function updateStorePage(product){
         </div>
         
         <div class="product-text">
-            <a class="preview-text subheader">For ${product.tags[1]}</a>
+            <a class="preview-text subheader">${product.tags[0]} ${product.tags[1]}</a>
             <a class="preview-text">
                 ${product.title}
             </a>
@@ -417,6 +427,8 @@ function updatePrice(){
     for(i = 0; i < cart.length; i++){
         currTotal += cart[i].price * cart[i].quantity;
     }
+
+    currTotal = currTotal.toFixed(2);
 
     document.getElementById("totalPrice").innerHTML = `$${currTotal}`;
     document.getElementById("totalQty").innerHTML = `${cart.length} Items`;
@@ -472,4 +484,17 @@ function insertHeader(){
             </div>
         </div>`
     ;
+}
+
+function goCheckout(){
+    if(cart.length === 0){
+        alert("There are no products in your cart. Add a product to continue.");
+    }
+    else{
+        window.location.href='checkout.html';
+    }
+}
+
+function alertUnimplemented(){
+    alert("Coming soon!")
 }

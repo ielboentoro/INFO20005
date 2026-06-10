@@ -29,6 +29,21 @@ ul li a {
     width: 100%;
 }
 
+button{
+    background: transparent;
+    border: 1px solid black;
+    border-radius: 50px;
+    min-width: 25px;
+    min-height: 25px;
+
+    transition-duration: 0.2s;
+}
+
+button:hover{
+    background: black;
+    color: white;
+}
+
 .page-content
 {
     display: flex;
@@ -67,13 +82,15 @@ ul li a {
 
 .section-header.sub1{
     text-align: right;
-    margin-top: 20px;
+    margin-top: 0px;
 
-    word-break: break-all;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    text-overflow: unset;
-    white-space: normal; 
+    max-width: 200px;
+
+    text-align: right;
+    line-height: 1.5;
+
+    white-space: normal;
+    align-self: right;
 }
 
 .section-header.sub2{
@@ -103,10 +120,12 @@ ul li a {
 }
 
 .section-header.sub4{
-    margin-top: 40px;
+    margin-top: 10px;
     font-size: 16px;
     color: gray;
-    width: 200px;
+
+    max-width: 200px;
+
     text-align: right;
     line-height: 1.2;
 
@@ -159,19 +178,6 @@ ul li a {
     border: 1px solid black;
 }
 
-.x-button {
-    background-color: transparent;
-    border: 1px solid black;
-    color: black;
-    padding: 15px 30px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 50px;
-} 
-
 .x-button.ungrowable {
 
     max-height: 50px;
@@ -210,4 +216,10 @@ ul li a {
     src: url(fonts/sourcesf2it.woff2);
     font-display: block;
     unicode-range: U +0000 -00A0, U +00A2 -00A9, U +00AC -00AE, U +00B0 -00B7, U +00B9 -00BA, U +00BC -00BE, U +00D7, U +00F7, U +2000 -206F, U +2074, U +20AC, U +2122, U +2190 -21BB, U +2212, U +2215, U + F8FF, U + FEFF, U + FFFD;
+}
+
+@media (max-width: 1450px){
+    .subsite-header{
+        margin: 25px 50px 90px 50px;
+    }
 }

@@ -6,14 +6,14 @@
     <title>Thank You!</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/success.css">
     <script src=scripts/scripts.js></script>
 </head>
-<body onload="insertHeader()">
-    <div class="header-container" id="headerCont">
-       
-    </div>
+<body onload="initMiniCart(); insertHeader()">
+    <header class="header-container" id="headerCont"></header>
     
-    <div class="page-top">
+    <section class="page-top">
         <div class="subsite-header-spacer"></div>
 
         <div class="subsite-header-container">
@@ -21,17 +21,25 @@
         </div>
 
         <div class="subsite-header-spacer"></div>
-    </div>
+    </section>
 
-    <div class="page-content">
-        <button onclick="window.location.href='home.html'; resetCart();">Return to Store</button>
-    </div>
+    <section class="page-content">
+        <div class="afterCheckout" id="cartContent">
+            <br>
+            <a class="section-header product-description">Your Items</a>
+            <br>
+        </div>
 
-    <div class="footer">
+        <br>
+
+        <button class="finish-button" onclick="window.location.href='home.html'; resetCart();">Return to Store</button>
+    </section>
+
+    <footer class="footer">
         <p class="section-header sub2">Our Socials</p>
         <p class="section-header sub3">0466 XXX XXX</p>
         <p class="section-header sub3">@disciplecoffee</p>
         <p class="section-header sub2">(c) 2026 Disciple Coffee Roasters</p>
-    </div>
+    </footer>
 </body>
 </html>
