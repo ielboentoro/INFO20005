@@ -15,21 +15,21 @@ body {
   margin: 0 -16px;
 }
 
-.col-25 {
+.xs-column{
   flex: 25%;
 }
 
-.col-50 {
+.small-column {
   flex: 50%;
 }
 
-.col-75 {
+.large-column {
   flex: 75%;
 }
 
-.col-25,
-.col-50,
-.col-75 {
+.xs-column,
+.small-column,
+.large-column {
   padding: 0 16px;
 }
 
@@ -196,10 +196,11 @@ span.price {
   .row {
     flex-direction: column-reverse;
   }
-  .col-25 {
+  .xs-column {
     margin-bottom: 20px;
   }
 }
+
 @font-face {
     font-family: "Source Serif Pro:Regular";
     font-style: normal;
