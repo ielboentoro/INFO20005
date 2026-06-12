@@ -24,6 +24,8 @@
         <div class="subsite-header-spacer"></div>
     </section>
 
+    <!-- Parts of this code was adapted from W3Schools.com -->
+     
     <section class="page-content">
         <section class="checkout-content">
             <div class="content">
@@ -33,15 +35,24 @@
                             <section>
                                 <div class="row">
                                     <div class="small-column">
-                                        <h3>Shipping Address</h3>
-                                        <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+                                        <h3>1. Shipping Address</h3>
+                                        <label for="fname">Full Name</label>
                                         <input type="text" id="fname" name="firstname" placeholder="Name">
-                                        <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                                        <label for="email">Email</label>
                                         <input type="text" id="email" name="email" placeholder="stop1@unimelb.edu.au">
-                                        <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
-                                        <input type="text" id="adr" name="address" placeholder="Street">
-                                        <label for="city"><i class="fa fa-institution"></i> City</label>
+
+                                        <label for="city">City</label>
                                         <input type="text" id="city" name="city" placeholder="City">
+                                    </div>
+
+                                    <div class="small-column">
+                                        <a class="column-spacer"><br><br><br></a>
+                                        
+                                        <label for="adr">Address</label>
+                                        <input type="text" id="adr" name="address" placeholder="Street">
+
+                                        <label for="adr">Address 2</label>
+                                        <input type="text" id="adr" name="address" placeholder="Apartment/Unit/Complex">
 
                                         <div class="row">
                                         <div class="small-column">
@@ -53,14 +64,37 @@
                                             <input type="text" id="zip" name="zip" placeholder="XXXX">
                                         </div>
                                         </div>
-                                    </div>
+                                        <div class="row">
+                                            <br>
+                                            <label class="inForm-check">
+                                                <input type="checkbox"> Remember my address.
+                                            </label>
+                                        </div>
+                                    </div>                            
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
 
+
+                <div class="row">
+                    <div class="large-column">
+                        <div class="container">
+                            <section>
+                                <div class="row">
                                     <div class="small-column">
-                                        <h3>Payment</h3>
+                                        <h3>2. Payment Details</h3>
                                         <label for="cname">Cardholder Name</label>
                                         <input type="text" id="cname" name="cardname" placeholder="Name">
                                         <label for="ccnum">Card Number</label>
                                         <input type="text" id="ccnum" name="cardnumber" placeholder="XXXX XXXX XXXX XXXX">
+
+                                        
+                                    </div>
+
+                                    <div class="small-column">
+                                        <a class="column-spacer"><br><br><br></a>
                                         <label for="expmonth">Expiry (MM)</label>
                                         <input type="text" id="expmonth" name="expmonth" placeholder="Month">
                                         <div class="row">
@@ -76,7 +110,7 @@
                                         <div class="row">
                                             <br>
                                             <label class="inForm-check">
-                                                <input type="checkbox" checked="checked" name="tnc"> I agree to the terms and conditions.
+                                                <input type="checkbox"> I've read the Terms of Purchase.
                                             </label>
                                         </div>
                                     </div>
@@ -90,8 +124,7 @@
             </div>
 
             <div class="menu" id="cartContent">
-                <a class="section-header product-description">Your Items</a>
-                <br>
+                <h3>Your Items</h3>
             </div>
         </section>
     </section>

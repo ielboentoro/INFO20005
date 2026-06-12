@@ -5,6 +5,16 @@ body {
   padding: 0px;
 }
 
+h3 {
+  font-size: 1.5em;
+}
+
+.column-spacer{
+  display: block;
+
+  font-size: 1.25em;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -109,7 +119,6 @@ span.price {
 
 .checkout-content div.menu{
     margin-top: 20px;
-    gap: 20px;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
@@ -126,6 +135,53 @@ span.price {
     align-items: center;
 
     grid-area: content;
+}
+
+.cartBox {
+  display: grid;
+  grid-template-areas:
+    "preview title"
+    "preview aux";
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+  background-color: white;
+  border-radius: 50px;
+  padding: 5px;
+
+  width: 100%;
+}
+
+.cartBox div {
+  padding: 10px;
+}
+
+.cartBox div.title {
+  grid-area: title;
+  text-align: center;
+}
+
+.cartBox div.preview {
+  grid-area: preview;
+
+  max-width: 330px;
+  justify-content: center;
+  align-items: center;
+}
+
+.cartBox div.aux {
+  grid-area: aux;
+
+  justify-content: center;
+  text-align: center;  
+}
+
+.cart-title{
+  font-size: 1.5em;
+  line-height: 1.5em;
+}
+
+.cart-title.smallText{
+  font-size: 1em;
 }
 
 @media (max-width: 1439px) {
@@ -149,56 +205,27 @@ span.price {
     }
 }
 
-.cartBox {
-  display: grid;
-  grid-template-areas:
-    "preview title"
-    "preview aux";
-  grid-template-columns: 1fr 1fr;
-  gap: 3px;
-  background-color: white;
-  border-radius: 50px;
-  padding: 5px;
-
-  width: 100%;
-}
-.cartBox div {
-  padding: 10px;
-}
-.cartBox div.title {
-  grid-area: title;
-  text-align: center;
-}
-.cartBox div.preview {
-  grid-area: preview;
-
-  max-width: 330px;
-  justify-content: center;
-  align-items: center;
-}
-.cartBox div.aux {
-  grid-area: aux;
-
-  justify-content: center;
-  text-align: center;  
-}
-
-.cart-title{
-  font-size: 1.5em;
-  line-height: 1.5em;
-}
-
-.cart-title.smallText{
-  font-size: 1em;
-}
-
 @media (max-width: 800px) {
   .row {
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
+
+  .container{
+    width: 100%;
+  }
+
   .xs-column {
     margin-bottom: 20px;
   }
+
+  .large-column{
+    min-width: 320px;
+  }
+
+  .column-spacer{
+    display: none;
+  }
+
 }
 
 @font-face {
