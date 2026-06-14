@@ -1,5 +1,8 @@
 # INFO20005 Assignment 3
 
+## Disclamer
+I noticed a lot of clones, please do not use this as an example! I am as much of a beginner as you are.
+
 ## Scope
 This is a redesign of Disciple Coffee's website (https://disciplecoffee.com.au) made for INFO20005 at the University of Melbourne.
 It was created as part of my learning in HTML, JavaScript, and CSS.
